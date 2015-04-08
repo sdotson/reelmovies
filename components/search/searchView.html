@@ -12,8 +12,8 @@
 				<a href="#/" class="btn-mobile">Didn't Find it? <strong>Search <span>Again!</span></strong></a>
 			</form>
 		</div>
+		<p ng-show="results.length == 0">There are no results matching the query <strong>'{{search}}'</strong>.</p>
 		<div class="movie-results clearfix">
-			<p ng-show="results.length == 0">There are no results matching the query <strong>'{{search}}'</strong>.</p>
 			<div ng-repeat="result in results" class="movie">
 				<a ng-href="#/movies/{{result.id}}">
 					<img ng-src="{{result.posters.detailed}}" alt="{{result.title}}">

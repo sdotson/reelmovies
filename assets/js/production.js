@@ -134,8 +134,6 @@
 			return style;
 		}
 
-
-
 	  };
 	  return ratingService;
 	}]);

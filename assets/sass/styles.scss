@@ -224,6 +224,16 @@
 }
 
 .movie-results {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+
 	@media screen and (max-width: 600px) {
 		padding: 0px 15px;
 	}
@@ -241,10 +251,6 @@
 		@media screen and (max-width: 600px) {
 			margin: 0px 3.5% 37px 3.5%;
 			width: 42.5%;
-
-			img {
-				width: 100%;
-			}
 		}
 
 		img {
