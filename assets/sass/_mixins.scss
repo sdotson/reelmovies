@@ -1,0 +1,13 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box; 
+}
+
+/* placeholders */
+@mixin placeholder-color($color) { 
+	::-webkit-input-placeholder { color: $color; }
+	:-moz-placeholder { /* Firefox 18- */ color: $color; }
+	::-moz-placeholder { /* Firefox 19+ */ color: $color; }
+	:-ms-input-placeholder { color: $color; }
+}

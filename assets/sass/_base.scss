@@ -1,0 +1,55 @@
+::selection {
+	background-color: $bluegray;
+}
+::-moz-selection {
+	background-color: $bluegray;	
+}
+
+.content-width {
+	width: 1024px;
+	margin: auto;
+	padding: 0px 40px;
+	position: relative;
+
+	@media screen and (max-width: 1054px) {
+		width: auto;
+		padding: 0px 30px;
+	}
+
+	@media screen and (max-width: 600px) {
+		padding: 0px;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* typography */
+body {
+	font-size: 16px;
+	font-family: "Open Sans", helvetica, sans-serif;
+	color: #282828;
+}
+
+h1, h2, h3, h4, h5 ,h6, p, ul, ol, blockquote {
+	margin-bottom: 21px;
+}
+
+h1, h2, h3, h4, h5 ,h6 {
+	line-height: 1.1;
+}
+
+h1 {
+	font-weight: 300;
+}
+
+p, ul, ol, blockquote {
+	line-height: 1.5;
+}
+
+ul, ol, blockquote {
+	margin-left: 30px;
+}

@@ -1,0 +1,68 @@
+<header class="header header-interior">
+	<div class="content-width">
+		<a class="logo" href="#/"><strong>Reel</strong>Movies</a>
+	</div>
+</header>
+<main class="main page-details">
+	<div class="content-width">
+		<div class="toolbar">
+			<a ng-click="$back()" class="back-to-results">Back to <strong>Search Results</strong></a>
+		</div>
+		<div class="movie-details clearfix">
+			<div class="movie">
+				<img ng-src="{{movie.posters.detailed}}">
+				<div class="rating">
+					<span class="number">{{movie.ratings.audience_score}}%</span>
+					<div class="redbull" ng-style="setStyle(movie.ratings.audience_score)"></div>
+				</div>
+			</div>
+			<div class="details">
+				<h1>{{movie.title}}</h1>
+				<p><strong>Critics Consensus</strong>: {{movie.critics_consensus}}<span ng-show="!movie.critics_consensus">There is no "Critics Consensus" for this movie.</span></p>
+				<div class="reel-stats-wrapper">
+					<div class="reel-stat">
+						<span class="label"><strong>Reel</strong>BoxOffice</span>
+						<span class="stat">$114.6M</span>
+					</div>
+					<div class="reel-stat middle">
+						<span class="label"><strong>Reel</strong>Runtime</span>
+						<span class="stat">{{movie.runtime | minutesToHours }}</span>
+						<span ng-show="!movie.runtime" class="stat">Not listed</span>
+					</div>
+					<div class="reel-stat">
+						<span class="label"><strong>Reel</strong>Rating</span>
+						<span class="stat">{{movie.mpaa_rating}}</span>
+					</div>
+				</div>
+				<div class="movie-attributes">
+					<div class="attribute">
+						<h2>MOVIE INFO</h2>
+						<div class="content">
+							{{movie.synopsis}}
+							<p ng-show="!movie.synopsis">There is no synopsis available for this movie.</p>
+						</div>
+					</div>
+					<div class="attribute">
+						<h2>RATING</h2>
+						<div class="content">
+							<p>{{movie.mpaa_rating}}</p>
+						</div>
+					</div>
+					<div class="attribute">
+						<h2>GENRE</h2>
+						<div class="content">
+							{{movie.genres.join(', ')}}
+						</div>
+					</div>
+					<div class="attribute">
+						<h2>Directed By</h2>
+						<div class="content">
+							<span ng-repeat="director in movie.abridged_directors">{{director.name}}<span ng-show="!$last">, </span></span>
+							<span ng-show="!movie.abridged_directors">There are no directors listed for this movie.</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

@@ -1,0 +1,28 @@
+<header class="header header-interior">
+	<div class="content-width">
+		<a href="#/" class="icon-search"></a>
+		<a class="logo" href="#/"><strong>Reel</strong>Movies</a>
+	</div>
+</header>
+<main class="main page-search">
+	<div class="content-width">
+		<div class="toolbar">
+			<form ng-submit="fetchResults()">
+				<input type="text" class="searchbar searchbar-interior" placeholder="Didn't Find it? Search Again!" ng-model="search">
+				<a href="#/" class="btn-mobile">Didn't Find it? <strong>Search <span>Again!</span></strong></a>
+			</form>
+		</div>
+		<div class="movie-results clearfix">
+			<p ng-show="results.length == 0">There are no results matching the query <strong>'{{search}}'</strong>.</p>
+			<div ng-repeat="result in results" class="movie">
+				<a ng-href="#/movies/{{result.id}}">
+					<img ng-src="{{result.posters.detailed}}" alt="{{result.title}}">
+				</a>
+				<div class="rating">
+					<span class="number">{{result.ratings.audience_score}}%</span>
+					<div class="redbull" ng-style="setStyle(result.ratings.audience_score)"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
